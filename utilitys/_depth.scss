@@ -14,7 +14,7 @@ $simple-shadow-depth: (
   box-shadow: unquote(nth($simple-shadow-depth, $depth));
 }
 // text-shadowの深さを $depth:1〜5 で調整
-@mixin simple-box-depth($depth) {
+@mixin simple-text-depth($depth) {
   text-shadow: unquote(nth($simple-shadow-depth, $depth));
 }
 
