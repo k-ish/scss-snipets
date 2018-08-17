@@ -2,22 +2,30 @@
 
 // マテリアルデザイン用のシンプルな影（1→5につれて深くなる）
 $simple-shadow-depth: (
-  "rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px",
-  "rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px",
-  "rgba(0, 0, 0, 0.19) 0px 10px 30px, rgba(0, 0, 0, 0.23) 0px 6px 10px",
-  "rgba(0, 0, 0, 0.25) 0px 14px 45px, rgba(0, 0, 0, 0.22) 0px 10px 18px",
-  "rgba(0, 0, 0, 0.3) 0px 19px 60px, rgba(0, 0, 0, 0.22) 0px 15px 20px"
+  1:"rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px",
+  2:"rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px",
+  3:"rgba(0, 0, 0, 0.19) 0px 10px 30px, rgba(0, 0, 0, 0.23) 0px 6px 10px",
+  4:"rgba(0, 0, 0, 0.25) 0px 14px 45px, rgba(0, 0, 0, 0.22) 0px 10px 18px",
+  5:"rgba(0, 0, 0, 0.3) 0px 19px 60px, rgba(0, 0, 0, 0.22) 0px 15px 20px"
 );
 
 // box-shadowの深さを $depth:1〜5 で調整
 @mixin simple-box-depth($depth) {
-  box-shadow: unquote(nth($simple-shadow-depth, $depth));
+  box-shadow: unquote(map-get($simple-shadow-depth, $depth));
 }
 // text-shadowの深さを $depth:1〜5 で調整
 @mixin simple-text-depth($depth) {
-  text-shadow: unquote(nth($simple-shadow-depth, $depth));
+  text-shadow: unquote(map-get($simple-shadow-depth, $depth));
 }
 
+// シンプルな影の汎用クラスを生成
+@mixin simple-box-depth-classes($name:depth) {
+  @each $key, $depth in $simple-shadow-depth {
+    #{$name}-#{$key}{
+      box-shadow: $depth; 
+    }
+  }
+}
 
 
 // ボタンホバーアニメーション
