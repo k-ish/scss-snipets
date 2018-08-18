@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+//
+// インライン要素
+//
+
+$create-text-color: true;
+$create-text-color: true;
+$create-text-weight: true;
+$create-text-align: true;
+$create-text-appearance: true; //スキン
+$create-bg-color: true; //ディスプレイ
+$create-display: true; //フロート
+$create-float: true;
+
+// 文字色の汎用クラス生成
+// @if $create-text-color {
+//   @each $name, $color in $colors {
+//     .tx-#{$name} {
+//       color: $color $im;
+//     }
+//   }
+//   @each $key, $value in $bp-down {
+//     @media #{$value} {
+//       @each $name, $color in $colors {
+//        .tx-#{$name}-#{$key} {
+//           background-color: $color $im;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// // 文字の太さ
+// @if $create-text-weight {
+//   @each $name, $weight in $font-weight {
+//     .tx-#{$name} {
+//       font-weight: $weight $im;
+//     }
+//   }
+//   @each $key, $value in $bp-down {
+//     @media #{$value} {
+//       @each $name, $weight in $font-weight {
+//         .tx-#{$name}-#{$key} {
+//           font-weight: $weight $im;
+//         }
+//       }
+//     }
+//   }
+// } //整列
+// @if $create-text-align {
+//   @each $name, $align in $text-align {
+//     .tx-#{$name} {
+//       text-align: $align $im;
+//     }
+//   }
+//   @each $key, $value in $bp-down {
+//     @media #{$value} {
+//       @each $name, $align in $text-align {
+//         .tx-#{$name}-#{$key} {
+//           text-align: $align $im;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// //外観
+// @if $create-text-appearance {
+//   .tx-italic {
+//     font-style: italic $im;
+//   }
+//   @each $key, $value in $breakpoint-down {
+//     @media #{$value} {
+//       .tx-italic-#{$key} {
+//         font-style: italic $im;
+//       }
+//     }
+//   }
+// }
+
+// //スキン
+// //背景色
+// @if $create-bg-color {
+//   @each $name, $color in $clr-list {
+//     .bg-#{$name} {
+//       background-color: $color $im;
+//     }
+//   }
+//   @each $key, $value in $breakpoint-down {
+//     @media #{$value} {
+//       @each $name, $color in $clr-list {
+//         .bg-#{$name}-#{$key} {
+//           background-color: $color $im;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// /* ----------------------------------------------
+//     display
+// ---------------------------------------------- */
+
+// //ディスプレイ
+// @if $create-display {
+//   @each $name, $display in $display-types {
+//     .d-#{$name} {
+//       display: $display $im;
+//     }
+//   }
+//   @each $key, $value in $breakpoint-down {
+//     @media #{$value} {
+//       @each $name, $display in $display-types {
+//         .d-#{$name}-#{$key} {
+//           display: $display $im;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// //フロート
+// @if $create-float {
+//   .cf::after,
+//   .cf::before {
+//     content: "";
+//     display: block;
+//     clear: both;
+//   }
+//   @each $name, $float in $float-types {
+//     .float-#{$name} {
+//       float: $float $im;
+//     }
+//   }
+//   @each $key, $value in $breakpoint-down {
+//     @media #{$value} {
+//       @each $name, $float in $float-types {
+//         .float-#{$name}-#{$key} {
+//           float: $float $im;
+//         }
+//       }
+//     }
+//   }
+// }

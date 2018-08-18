@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+//
+// ブレークポイント
+//
+
+// モバイルファースト
+$bp-up: (
+  'sm': 'screen and (min-width: 576px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 992px)',
+  'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+// PCファースト
+$bp-down: (
+  'xl': 'screen and (max-width: 1200px)',
+  'lg': 'screen and (max-width: 992px)',
+  'md': 'screen and (max-width: 768px)',
+  'sm': 'screen and (max-width: 576px)',
+) !default;
+
+// モバイルファースト
+@mixin mq-up($breakpoint: md) {
+  @media #{map-get($bp-up, $breakpoint)} {
+    @content;
+  }
+}
+// PCファースト
+@mixin mq-down($breakpoint: md) {
+  @media #{map-get($bp-down, $breakpoint)} {
+    @content;
+  }
+}
+
+// クラス生成用
+@mixin mq-all {
+    @each $value in map-values($bp-down) {
+        @media #{$value} {
+            @content;
+        }
+    }
+}
+
+$im: !important;
