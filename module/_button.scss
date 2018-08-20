@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+//
+// ボタン
+//
+
+// ベース
+@mixin btn {
+  display: inline-block;
+  padding: 1em 2em;
+  a {
+    display: block;
+  }
+}
+
+// モディファイ サイズ
+@mixin btn-size {
+  &-full {
+   width: 100%;
+  }
+  &-small {
+   width: 100%;
+  }
+  &-large {
+   width: 100%;
+  }
+
+}
