@@ -5,16 +5,17 @@
 //
 
 // ベース
-@mixin btn {
+@mixin btn-block {
   display: inline-block;
   padding: 1em 2em;
+  text-align: center;
   a {
     display: block;
   }
 }
 
-// モディファイ サイズ
-@mixin btn-size {
+// サイズ拡張
+@mixin btn-mod-size {
   &-full {
    width: 100%;
   }
@@ -26,3 +27,17 @@
   }
 
 }
+
+// ボタンリセット
+@mixin btn-reset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent none;
+  font-size: inherit;
+  @each $list in $vendor-identifier-list {
+    #{$list}appearance: none;
+  }
+  appearance: none;
+}
+

@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+// 
+// メディア
+// 
+
+// ベース
+@mixin media-block ($gutter:null) {
+    @include clearfix;
+    &_img {
+        float: left;
+        margin-right: $gutter;
+    }
+    &_body {
+        overflow: hidden;
+    }
+}
+
+// 拡張
+// img右揃え
+@mixin media-img-right ($gutter:null) {
+    float: right;
+    margin-right: 0;
+    margin-left: $gutter;
+}
+
