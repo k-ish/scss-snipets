@@ -1,1 +1,1 @@
-# scss-snipets-re
+# scss-snipets
