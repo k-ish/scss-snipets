@@ -5,8 +5,8 @@
 @import "set/color";
 @import "set/variables";
 
-
 // utilitys
+@import "utilitys/switch";
 @import "utilitys/clearfix";
 @import "utilitys/depth";
 @import "utilitys/size";
@@ -14,7 +14,7 @@
 @import "utilitys/position";
 @import "utilitys/space";
 @import "utilitys/context";
-@import "utilitys/switch";
+@import "utilitys/background";
 
 //module
 @import "module/button";
