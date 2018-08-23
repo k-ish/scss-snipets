@@ -16,38 +16,34 @@
 // metallic ratio
 //
 
-// 黄金比
-@mixin retio-gold($width) {
+$retio-gold: 1.618;
+$retio-silver: 1.414;
+$retio-platinum: 1.732;
+$retio-bronze: 3.303;
+
+
+// 貴金属比
+// width から
+@mixin metallic-width($width, $retio:$retio-gold) {
   width: $width;
-  height: round($width / 1.618);
+  height: round($width / $retio);
 }
 
-// 白銀比
-@mixin retio-silver($width) {
-  width: $width;
-  height: round($width / 1.414);
+// height から
+@mixin metallic-height($height, $retio:$retio-gold) {
+  width: $round($height * $retio);
+  height: $height;
 }
 
-// 白金比
-@mixin retio-platinum($width) {
-  width: $width;
-  height: round($width / 1.732);
+@for $i from 1 through $boxes {
+  $height: $base-width / $retio;
+  .box-#{$i} {
+    width: $base-width;
+    height:$height;
+  }
+  $base-width: $height;
 }
 
-//青銅比
-@mixin retio-bronze($width) {
-  width: $width;
-  height: round($width / 3.303);
-}
-
-// 3:2
-@mixin retio-3-2($width) {
-  width: $width;
-  height: round($width / 1.5);
-}
-
-// 4:3
-@mixin retio-4-3($width) {
-  width: $width;
-  height: round($width / 3.303);
+@function retio ($retio) {
+  @return $width / $retio;
 }
