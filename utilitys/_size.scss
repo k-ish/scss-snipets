@@ -10,3 +10,44 @@
   height: $width;
   border-radius: $width / 2;
 }
+
+
+//
+// metallic ratio
+//
+
+// 黄金比
+@mixin retio-gold($width) {
+  width: $width;
+  height: round($width / 1.618);
+}
+
+// 白銀比
+@mixin retio-silver($width) {
+  width: $width;
+  height: round($width / 1.414);
+}
+
+// 白金比
+@mixin retio-platinum($width) {
+  width: $width;
+  height: round($width / 1.732);
+}
+
+//青銅比
+@mixin retio-bronze($width) {
+  width: $width;
+  height: round($width / 3.303);
+}
+
+// 3:2
+@mixin retio-3-2($width) {
+  width: $width;
+  height: round($width / 1.5);
+}
+
+// 4:3
+@mixin retio-4-3($width) {
+  width: $width;
+  height: round($width / 3.303);
+}
