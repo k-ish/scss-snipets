@@ -60,17 +60,23 @@ $ratio-bronze: 3.303;
 
 @mixin test ($b-width, $ratio:$ratio-gold) {
 
-  $width: $b-width / $ratio;
+  $width: round($b-width / $ratio);
   $height: $width;
 
-
-  .box {
-    width: $width;
-    height: $height;
+  @for $i from 1 through $boxes {
+  @if $i < $boxes {
+   
+    .box {
+      width: $width;
+      height: $height;
+    }
+  
+  } @else {
+    
   }
   $width: $width / $ratio;
 
 
+  }//for
 
-
-}
+}//mix
