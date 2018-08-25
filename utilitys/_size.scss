@@ -1,101 +1,90 @@
-
 @mixin size($width, $height: $width) {
-  width: $width;
-  height: $height;
+    width: $width;
+    height: $height;
 }
 
 @mixin circle($width) {
-  width: $width;
-  height: $width;
-  border-radius: $width / 2;
+    width: $width;
+    height: $width;
+    border-radius: $width / 2;
 }
-
 
 //
 // metallic ratio
 //
-
 $ratio-gold: 1.618;
 $ratio-silver: 1.414;
 $ratio-platinum: 1.732;
 $ratio-bronze: 3.303;
-
-
 // width から計算
 @mixin metallic-by-width($width, $ratio:$ratio-gold) {
-  width: $width;
-  height: round($width / $ratio);
+    width: $width;
+    height: round($width / $ratio);
 }
 
 // height から計算
 @mixin metallic-by-height($height, $ratio:$ratio-gold) {
-  width: round($height * $ratio);
-  height: $height;
+    width: round($height * $ratio);
+    height: $height;
 }
 
 // width から計算（縦長）
 @mixin metallic-by-width-portrait($width, $ratio:$ratio-gold) {
-  width: $width;
-  height: round($width * $ratio);
+    width: $width;
+    height: round($width * $ratio);
 }
 
 // height から計算（縦長）
 @mixin metallic-by-height-portrait($height, $ratio:$ratio-gold) {
-  width: round($height / $ratio);
-  height: $height;
+    width: round($height / $ratio);
+    height: $height;
 }
-
 
 //横幅から分割
 @mixin metallic-two-col($base-width, $ratio:$ratio-gold) {
-  $width: round($base-width / $ratio);
-  width: $width;
-  height: $width;
-  &-short {
-    width: round($base-width - $width);
+    $width: round($base-width / $ratio);
+    width: $width;
     height: $width;
-  }
+    &-short {
+        width: round($base-width - $width);
+        height: $width;
+    }
 }
 
+// 貴金属比を指定した数だけ分割
 @mixin create-metallic ($b-width, $boxes, $ratio:$ratio-gold) {
 
-  $width: round($b-width / $ratio);
-  $height: $width;
+    $width: round($b-width / $ratio);
+    $height: $width;
 
-  @for $i from 1 through $boxes {
-    @if $i < $boxes {
-      
-      &-#{$i} {
-        width: $width;
-        height: $height;
-      }
-      $width: round($width / $ratio);
-      $height: $width;
-      
-    } @else {
-      
-      $last-width: $width - round($width / $ratio);
-      $last-height: $height;
-      @if $i % 2 == 0 {
-        &-#{$i} {
-          width: $last-width;
-          height: $last-height;
+    @for $i from 1 through $boxes { // $boxesの数だけクラス生成
+        @if $i < $boxes { // 最後のクラスじゃないとき
+            &-#{$i} {
+                width: $width;
+                height: $height;
+            }
+            $width: round($width / $ratio);
+            $height: $width;
         }
-      } @else {
-        &-#{$i} {
-          width: $last-height;
-          height: $last-width;
+        @else { // 最後のクラスのとき
+            $long: round($width * $ratio);
+            $short: $width;
+            @if $i % 2==0 { // 最後のクラスが偶数のとき
+                &-#{$i} {
+                    width: $short;
+                    height: $long;
+                }
+            }
+            @else { // 最後のクラスが奇数のとき
+                &-#{$i} {
+                    width: $long;
+                    height: $short;
+                }
+            }
         }
-      }
-        
-        
-        
-    }//if
-    
-  }//for
-}//mix
+    }
+}
 
-
-.goldRatio {
-  @include create-metallic(1280px, 4)
+.goldBox {
+    @include create-metallic(1000px, 3);
 }
