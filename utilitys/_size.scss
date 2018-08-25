@@ -1,4 +1,3 @@
-@charset "utf-8";
 
 @mixin size($width, $height: $width) {
   width: $width;
@@ -58,25 +57,45 @@ $ratio-bronze: 3.303;
   }
 }
 
-@mixin test ($b-width, $ratio:$ratio-gold) {
+@mixin create-metallic ($b-width, $boxes, $ratio:$ratio-gold) {
 
   $width: round($b-width / $ratio);
   $height: $width;
 
   @for $i from 1 through $boxes {
-  @if $i < $boxes {
-   
-    .box {
-      width: $width;
-      height: $height;
-    }
-  
-  } @else {
+    @if $i < $boxes {
+      
+      &-#{$i} {
+        width: $width;
+        height: $height;
+      }
+      $width: round($width / $ratio);
+      $height: $width;
+      
+    } @else {
+      
+      $last-width: $width - round($width / $ratio);
+      $last-height: $height;
+      @if $i % 2 == 0 {
+        &-#{$i} {
+          width: $last-width;
+          height: $last-height;
+        }
+      } @else {
+        &-#{$i} {
+          width: $last-height;
+          height: $last-width;
+        }
+      }
+        
+        
+        
+    }//if
     
-  }
-  $width: $width / $ratio;
-
-
   }//for
-
 }//mix
+
+
+.goldRatio {
+  @include create-metallic(1280px, 4)
+}
