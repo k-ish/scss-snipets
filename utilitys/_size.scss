@@ -59,8 +59,8 @@ $ratio-bronze: 3.303;
 }
 
 // 黄金比を指定した数だけ分割
-@mixin create-metallic-gold($b-width, $boxes) {
-  $width: round($b-width / $ratio-gold);
+@mixin create-metallic-gold($base-width, $boxes) {
+  $width: round($base-width / $ratio-gold);
   $height: $width;
 
   @for $i from 1 through $boxes {
