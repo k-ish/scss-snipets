@@ -1,9 +1,32 @@
 @charset "utf-8";
 
+// clearfix
 @mixin clearfix {
   &::after {
       display: block;
       clear: both;
       content: "";
+  }
+}
+
+
+// float
+
+$create-float: true !default;
+
+@if $create-float {
+  @each $name, $float in $float-list {
+    .float-#{$name} {
+      float: $float $im;
+    }
+  }
+  @each $key, $value in $bp-down {
+    @media #{$value} {
+      @each $name, $float in $float-list {
+        .float-#{$name}-#{$key} {
+          float: $float $im;
+        }
+      }
+    }
   }
 }

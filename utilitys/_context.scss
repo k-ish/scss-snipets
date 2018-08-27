@@ -1,20 +1,21 @@
 @charset "utf-8";
 
 //
-// インライン要素
+// 汎用クラス
 //
 
-$create-text-color: false !default;
-$create-text-weight: false !default;
-$create-text-align: false !default;
-$create-text-appearance: false !default;
+// color
+// font-weight
+// text-align
+// vertical-align
 
-$create-display: false !default;
-$create-float: false !default;
+
+
+// color
 
 @if $create-text-color {
   @each $key, $value in $colors {
-    .tx-#{$key} {
+    .txt-#{$key} {
       color: $value $im;
     }
   }
@@ -22,7 +23,7 @@ $create-float: false !default;
   @each $key, $value in $bp-down {
     @media #{$value} {
       @each $name, $color in $colors {
-       .tx-#{$name}-#{$key} {
+       .txt-#{$name}-#{$key} {
           color: $color $im;
         }
       }
@@ -31,98 +32,64 @@ $create-float: false !default;
 }
 
 
-// // 文字の太さ
-// @if $create-text-weight {
-//   @each $name, $weight in $font-weight {
-//     .tx-#{$name} {
-//       font-weight: $weight $im;
-//     }
-//   }
-//   @each $key, $value in $bp-down {
-//     @media #{$value} {
-//       @each $name, $weight in $font-weight {
-//         .tx-#{$name}-#{$key} {
-//           font-weight: $weight $im;
-//         }
-//       }
-//     }
-//   }
-// } //整列
-// @if $create-text-align {
-//   @each $name, $align in $text-align {
-//     .tx-#{$name} {
-//       text-align: $align $im;
-//     }
-//   }
-//   @each $key, $value in $bp-down {
-//     @media #{$value} {
-//       @each $name, $align in $text-align {
-//         .tx-#{$name}-#{$key} {
-//           text-align: $align $im;
-//         }
-//       }
-//     }
-//   }
-// }
 
-// //外観
-// @if $create-text-appearance {
-//   .tx-italic {
-//     font-style: italic $im;
-//   }
-//   @each $key, $value in $breakpoint-down {
-//     @media #{$value} {
-//       .tx-italic-#{$key} {
-//         font-style: italic $im;
-//       }
-//     }
-//   }
-// }
+// font-weight
+
+@if $create-text-weight {
+  @each $name, $weight in $font-weight {
+    .txt-#{$name} {
+      font-weight: $weight $im;
+    }
+  }
+  @each $key, $value in $bp-down {
+    @media #{$value} {
+      @each $name, $weight in $font-weight {
+        .txt-#{$name}-#{$key} {
+          font-weight: $weight $im;
+        }
+      }
+    }
+  }
+}
 
 
 
-// /* ----------------------------------------------
-//     display
-// ---------------------------------------------- */
+// text-align
 
-// //ディスプレイ
-// @if $create-display {
-//   @each $name, $display in $display-types {
-//     .d-#{$name} {
-//       display: $display $im;
-//     }
-//   }
-//   @each $key, $value in $breakpoint-down {
-//     @media #{$value} {
-//       @each $name, $display in $display-types {
-//         .d-#{$name}-#{$key} {
-//           display: $display $im;
-//         }
-//       }
-//     }
-//   }
-// }
+@if $create-text-align {
+  @each $name, $align in $text-align {
+    .txt-#{$name} {
+      text-align: $align $im;
+    }
+  }
+  @each $key, $value in $bp-down {
+    @media #{$value} {
+      @each $name, $align in $text-align {
+        .txt-#{$name}-#{$key} {
+          text-align: $align $im;
+        }
+      }
+    }
+  }
+}
 
-// //フロート
-// @if $create-float {
-//   .cf::after,
-//   .cf::before {
-//     content: "";
-//     display: block;
-//     clear: both;
-//   }
-//   @each $name, $float in $float-types {
-//     .float-#{$name} {
-//       float: $float $im;
-//     }
-//   }
-//   @each $key, $value in $breakpoint-down {
-//     @media #{$value} {
-//       @each $name, $float in $float-types {
-//         .float-#{$name}-#{$key} {
-//           float: $float $im;
-//         }
-//       }
-//     }
-//   }
-// }
+
+
+// vertical-align
+
+@if $create-vertical-align {
+  @each $name, $align in $vertical-align {
+    .vertical-#{$name} {
+      vertical-align : $align $im;
+    }
+  }
+  @each $key, $value in $bp-down {
+    @media #{$value} {
+      @each $name, $align in $vertical-align {
+        .vertical-#{$name}-#{$key} {
+          vertical-align: $align $im;
+        }
+      }
+    }
+  }
+}

@@ -1,18 +1,13 @@
 @charset "utf-8";
 
-// 
-// position 
-// 
+//
+// position
+//
 
-// プロパティ map
-$position-list: (
-  fixed: fixed,
-  relative: relative,
-  absolute: absolute,
-  none: none
-);
 
-// 親がrelative の場合、垂直中央配置 
+
+// 親がrelative の場合、垂直中央配置
+
 @mixin absolute-middle ($width:null, $height:null) {
   position: absolute;
   top: 0;
@@ -23,7 +18,10 @@ $position-list: (
   height: $height;
 }
 
-// 親がrelative の場合、水平中央配置 
+
+
+// 親がrelative の場合、水平中央配置
+
 @mixin absolute-center ($width:null, $height:null) {
   position: absolute;
   right: 0;
@@ -34,13 +32,25 @@ $position-list: (
   height: $height;
 }
 
-// true でposition汎用クラス生成
-$create-position-classes: false;
 
-@if $create-position-classes {
-  @each $key, $value in $position-list {
-    pos-#{$key} {
-      position: $value;
+
+// true でposition汎用クラス生成
+
+$create-position: false !default;
+
+@if $create-position {
+  @each $name, $position in $position-list {
+    .pos-#{$name} {
+      position: $position $im;
     }
-  } 
+  }
+  @each $key, $value in $bp-down {
+    @media #{$value} {
+      @each $name, $position in $position-list {
+        .pos-#{$name}-#{$key} {
+          position: $position $im;
+        }
+      }
+    }
+  }
 }

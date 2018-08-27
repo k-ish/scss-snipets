@@ -1,3 +1,39 @@
 @charset "utf-8";
 
 $vendor-identifier-list: -moz-,-webkit-;
+
+$font-weight: (
+	normal: normal,
+	bold: bold,
+	thin: thin,
+) !default;
+
+$text-align: (
+	left: left,
+	center: center,
+	right: right,
+) !default;
+
+$vertical-align: (
+  baseline: baseline,
+  top: top,
+  middle: middle,
+  bottom: bottom,
+  textTop: text-top,
+  textBottom: text-bottom,
+  super: super,
+  sub: sub,
+) !default;
+
+$position-list: (
+  fixed: fixed,
+  relative: relative,
+  absolute: absolute,
+  none: none
+) !default;
+
+$float-list: (
+	left: left,
+	right: right,
+	none: none,
+) !default;
