@@ -1,17 +1,17 @@
 @charset "utf-8";
 
-$vendor-identifier-list: -moz-,-webkit-;
+$vendor-identifier-list: -moz-, -webkit-;
 
 $font-weight: (
-	normal: normal,
-	bold: bold,
-	thin: thin,
+  normal: normal,
+  bold: bold,
+  thin: thin
 ) !default;
 
 $text-align: (
-	left: left,
-	center: center,
-	right: right,
+  left: left,
+  center: center,
+  right: right
 ) !default;
 
 $vertical-align: (
@@ -22,7 +22,7 @@ $vertical-align: (
   textTop: text-top,
   textBottom: text-bottom,
   super: super,
-  sub: sub,
+  sub: sub
 ) !default;
 
 $position-list: (
@@ -33,7 +33,16 @@ $position-list: (
 ) !default;
 
 $float-list: (
-	left: left,
-	right: right,
-	none: none,
+  left: left,
+  right: right,
+  none: none
+) !default;
+
+$display-list: (
+  inline: inline,
+  block: block,
+  inline-block: inline-block,
+  none: none,
+  flex: flex,
+  inline-flex: inline-flex
 ) !default;

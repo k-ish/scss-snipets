@@ -2,7 +2,7 @@
 
 // display
 
-$create-display: true !default;
+$create-display: false !default;
 
 @if $create-display {
   @each $name, $display in $display-list {
