@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 $vendor-identifier-list: -moz-, -webkit-;
+$im: !important;
 
 $font-weight: (
   normal: normal,
@@ -11,7 +12,8 @@ $font-weight: (
 $text-align: (
   left: left,
   center: center,
-  right: right
+  right: right,
+  justify: justify
 ) !default;
 
 $vertical-align: (

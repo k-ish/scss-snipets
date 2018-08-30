@@ -2,8 +2,6 @@
 
 // display
 
-$create-display: false !default;
-
 @if $create-display {
   @each $name, $display in $display-list {
     .display-#{$name} {
