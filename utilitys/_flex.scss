@@ -1,13 +1,30 @@
 @charset "utf-8";
 
-
-
-
-
 // flex box
 
+
+// bese 
 @mixin flex-box {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+// order の生成
+@mixin order ($class:order, $num:5) {
+  @for $i from 1 through $num {
+    .#{$class}-#{$i} {
+      order: $i;
+    }
+  }
+}
+
+
+// flex-grow の生成
+@mixin flex-grow ($class:grow, $num:5) {
+  @for $i from 1 through $num {
+    .#{$class}-#{$i}-#{$bp-infix} {
+      flex-grow: $i;
+    }
+  }
 }

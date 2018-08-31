@@ -48,3 +48,67 @@ $display-list: (
   flex: flex,
   inline-flex: inline-flex
 ) !default;
+
+
+
+// flexbox 関連
+// ==========================================
+
+// 親要素に指定
+
+// flex子要素の配置方向
+$flex-direction: (
+  row: row,   // 初期値。左から右
+  row-reverse: row-reverse,    // 右から左
+  column :column,    //上から下
+  column-reverse: column-reverse    //下から上
+);
+
+// 子要素の折返し
+$flex-wrap: (
+  nowrap: nowrap,   // 初期値。折返しなし
+  wrap: wrap,    // 上から下に折返し
+  wrap-reverse: wrap-reverse   // 下から上に折返し
+);
+
+// 親要素の空きスペースに対する水平方向揃え
+$justify-content: (
+  flex-start: flex-start,   // 初期値。左揃え
+  flex-end :flex-end,   // 右揃え
+  center :center,   // 中央揃え
+  space-between :space-between,   // 両端揃え
+  space-around: space-around   // 均等割付
+);
+//------------------------------------------------------------------//
+//「flex-start」と「flex-end」はRTL（Right To Left ＝ 右から左）
+// のときは逆向きに配置される
+//------------------------------------------------------------------//
+
+// 親要素の空きスペースに対する垂直方向揃え
+$align-items: (
+  stretch: stretch,   // 初期値。親要素または子要素最大の高さに合わせて拡張（スペースを埋める）
+  flex-start: flex-start,   // 上揃え
+  flex-end :flex-end,   // 下揃え
+  center :center,     // 中央揃え
+  baseline :baseline    // ベースラインに揃える
+);
+
+// 複数行になったときの揃え
+$align-content: (
+  stretch: stretch,   // 初期値。親要素の高さに合わせて拡張
+  flex-start: flex-start,   // 初期値。上揃え
+  flex-end :flex-end,   // 下揃え
+  center :center,   // 中央揃え
+  space-between :space-between,   // 上下両端揃え
+  space-around: space-around   // 上下均等割付
+)
+//------------------------------------------------------------------//
+//「flex-wrap: nowrap;」の指定があるときは無効
+//------------------------------------------------------------------//
+
+// 子要素に指定（個別指定）
+// 親要素に「display:flex」の指定があると有効
+
+// 親要素に空きスペースがある場合の
+// 他の子要素に対する、指定の子要素の伸び率
+

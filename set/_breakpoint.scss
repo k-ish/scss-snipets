@@ -14,7 +14,7 @@ $bp-up: (
 
 // PCファースト
 $bp-down: (
-  'xl': 'screen and (max-width: 1200px)',
+  'sp': 'screen and (max-width: 1200px)',
   'lg': 'screen and (max-width: 992px)',
   'md': 'screen and (max-width: 768px)',
   'sm': 'screen and (max-width: 576px)',
@@ -40,4 +40,30 @@ $bp-down: (
             @content;
         }
     }
+}
+
+
+
+//クラス生成用(仮)　プレフィックス付き
+$for-mq-classes: (
+  'none': '0',
+  'sp': 'screen and (max-width: 1200px)',
+  'lg': 'screen and (max-width: 992px)',
+  'md': 'screen and (max-width: 768px)',
+  'sm': 'screen and (max-width: 576px)',
+) !default;
+
+$bp-infix: "" !default;
+
+@mixin mq-classes {
+  @each $key, $value in $for-mq-classes {
+    @if $key == none {
+      @content;
+    }@else{
+      @media #{$value} {
+        $bp-infix: "-" + $key !global;  //クラス名に付与するbp識別子
+        @content;
+      }
+    }
+  }
 }
