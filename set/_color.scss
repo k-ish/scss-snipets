@@ -1,10 +1,8 @@
 @charset "utf-8";
 
-//
-// カラーシステム
-//
+// bootstrap color system
 
-// グレースケール
+// gray
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -30,7 +28,7 @@ $grays: map-merge((
   "900": $gray-900
 ), $grays);
 
-// カラーパレット
+// colors
 $blue:    #007bff !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
@@ -59,7 +57,6 @@ $colors: map-merge((
   "gray-dark":  $gray-800
 ), $colors);
 
-// 相対
 $primary:       $blue !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
@@ -80,3 +77,4 @@ $theme-colors: map-merge((
   "light":      $light,
   "dark":       $dark
 ), $theme-colors);
+

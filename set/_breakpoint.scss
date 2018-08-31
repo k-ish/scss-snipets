@@ -1,10 +1,9 @@
 @charset "utf-8";
 
-//
-// ブレークポイント
-//
+// media query
 
-// モバイルファースト
+
+// mobile
 $bp-up: (
   'sm': 'screen and (min-width: 576px)',
   'md': 'screen and (min-width: 768px)',
@@ -12,30 +11,33 @@ $bp-up: (
   'xl': 'screen and (min-width: 1200px)',
 ) !default;
 
-// PCファースト
+// pc
 $bp-down: (
-  'sp': 'screen and (max-width: 1200px)',
+  'xl': 'screen and (max-width: 1200px)',
   'lg': 'screen and (max-width: 992px)',
-  'md': 'screen and (max-width: 768px)',
+  'md': 'screen and (max-width:768px)',
   'sm': 'screen and (max-width: 576px)',
 ) !default;
 
-// モバイルファースト
+// 利用するBPを代入
+$breakpoints: $bp-down;
+
+// media query for mobile
 @mixin mq-up($breakpoint: md) {
   @media #{map-get($bp-up, $breakpoint)} {
     @content;
   }
 }
-// PCファースト
+// media query for pc
 @mixin mq-down($breakpoint: md) {
   @media #{map-get($bp-down, $breakpoint)} {
     @content;
   }
 }
 
-// クラス生成用
+// make media query classes
 @mixin mq-all {
-    @each $value in map-values($bp-down) {
+    @each $value in map-values($breakpoints) {
         @media #{$value} {
             @content;
         }
@@ -44,14 +46,15 @@ $bp-down: (
 
 
 
-//クラス生成用(仮)　プレフィックス付き
+//汎用クラス生成用(仮)　プレフィックス付き
+
+$mq-none: (   //クラス名に付けることでメディアクエリの識別子を付与
+  'none':'0'
+);
+
 $for-mq-classes: (
-  'none': '0',
-  'sp': 'screen and (max-width: 1200px)',
-  'lg': 'screen and (max-width: 992px)',
-  'md': 'screen and (max-width: 768px)',
-  'sm': 'screen and (max-width: 576px)',
-) !default;
+  map-merge($mq-none, $breakpoints)
+);
 
 $bp-infix: "" !default;
 
@@ -64,6 +67,7 @@ $bp-infix: "" !default;
         $bp-infix: "-" + $key !global;  //クラス名に付与するbp識別子
         @content;
       }
+      $bp-infix: "" !global;
     }
   }
 }
