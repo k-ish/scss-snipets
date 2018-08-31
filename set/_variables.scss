@@ -3,6 +3,19 @@
 $vendor-identifier-list: -moz-, -webkit-;
 $im: !important;
 
+// grid system
+$create-grid-system: false;
+$base-width: 1280px;
+$grid-gutter-width: 30px;
+$grid-columns: 12;
+$container-width: (
+  "sm": 540px,
+  "md": 720px,
+  "lg": 960px,
+  "xl": 1140px
+);
+
+// inline
 $font-weight: (
   normal: normal,
   bold: bold,
@@ -27,6 +40,7 @@ $vertical-align: (
   sub: sub
 ) !default;
 
+// box property
 $position-list: (
   fixed: fixed,
   relative: relative,
@@ -52,8 +66,6 @@ $display-list: (
 
 
 // flexbox 関連
-// ==========================================
-
 // 親要素に指定
 
 // flex子要素の配置方向
