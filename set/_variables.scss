@@ -1,7 +1,64 @@
-@charset "utf-8";
+
+
+
+// normalize
+
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+$font-family-base:            $font-family-sans-serif !default;
+$font-size-base:              1rem !default;
+$font-weight-base:            normal;
+$line-height-base:            1.5 !default;
+$body-bg:                     $white !default;
+$body-color:                  $gray-900 !default;
+
+$headings-margin-bottom:    $font-size-base;
+$paragraph-margin-bottom:   1rem !default;
+$dt-font-weight:            bold;
+
+
+@mixin hover {
+  &:hover { @content; }
+}
+
+@mixin hover-focus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin plain-hover-focus {
+  &,
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin hover-focus-active {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+$link-color:                $primary !default;
+$link-decoration:           none !default;
+$link-hover-color:          darken($link-color, 15%) !default;
+$link-hover-decoration:     underline !default;
+
+$table-caption-color:         $gray-600 !default;
+$label-margin-bottom:         .5rem !default;
+$table-cell-padding:          .75rem !default;
+
+
 
 $vendor-identifier-list: -moz-, -webkit-;
 $im: !important;
+
+
 
 // grid system
 $create-grid-system: false;
@@ -123,4 +180,3 @@ $align-content: (
 
 // 親要素に空きスペースがある場合の
 // 他の子要素に対する、指定の子要素の伸び率
-

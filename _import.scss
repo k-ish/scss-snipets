@@ -1,9 +1,16 @@
 @charset "utf-8";
 
-// setting
+// breakpoint
 @import "set/breakpoint";
+
+// color
 @import "set/color";
+
+// variables
 @import "set/variables";
+
+// normalize
+// @import "set/normalize";
 
 // utilitys
 @import "utilitys/switch";
