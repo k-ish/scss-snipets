@@ -1,8 +1,28 @@
 @charset "utf-8";
 
+// color system
+
+// base
+$base-color: #F4CA55 !default;
+
+// complementary
+$complement-color: complement($base-color);
+
+// triad
+$triad-01: $base-color !default;
+$triad-02: adjust-hue($base-color, 120deg) !default;
+$triad-03: adjust-hue($base-color, -140deg) !default;
+
+// split complementary
+$split-01: $base-color !default;
+$split-02: adjust-hue(complement($base-color), 10deg) !default;
+$split-03: adjust-hue(complement($base-color), -10deg) !default;
+
+
+
+
 // bootstrap color system
 
-// gray
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -28,7 +48,6 @@ $grays: map-merge((
   "900": $gray-900
 ), $grays);
 
-// colors
 $blue:    #007bff !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
@@ -77,4 +96,3 @@ $theme-colors: map-merge((
   "light":      $light,
   "dark":       $dark
 ), $theme-colors);
-
