@@ -1,6 +1,6 @@
-// size
+// square
 
-@mixin size($width, $height: $width) {
+@mixin square($width, $height: $width) {
   width: $width;
   height: $height;
 }
@@ -14,3 +14,7 @@
   height: $width;
   border-radius: $width / 2;
 }
+
+
+
+// triangle
