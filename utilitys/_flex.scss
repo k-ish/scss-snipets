@@ -1,19 +1,55 @@
-// order の生成
+// flex-direction
 
-@mixin order ($class:order, $num:5) {
-  @for $i from 1 through $num {
-    .#{$class}-#{$i} {
-      order: $i;
+@if $create-flex-direction {
+  @include mq-classes {
+    @each $name, $value in $flex-direction {
+      .f-direction-#{$name}#{$bp-infix} {
+        flex-direction: $value;
+      }
     }
   }
 }
 
 
-// flex-grow の生成
-@mixin flex-grow ($class:grow, $num:5) {
-  @for $i from 1 through $num {
-    .#{$class}-#{$i}-#{$bp-infix} {
-      flex-grow: $i;
+
+
+
+// order
+
+@if $create-flex-order {
+  @include mq-classes {
+    @for $i from 1 through $order-end-value {
+      .order-#{$i}#{$bp-infix} {
+        order: $i;
+      }
+    }
+  }
+}
+
+
+
+// flex-grow
+
+@if $create-flex-grow {
+  @include mq-classes {
+    @for $i from 1 through $grow-end-value {
+      .grow-#{$i}#{$bp-infix} {
+        flex-grow: $i;
+      }
+    }
+  }
+}
+
+
+
+// flex-shrink
+
+@if $create-flex-shrink {
+  @include mq-classes {
+    @for $i from 1 through $shrink-end-value {
+      .shrink-#{$i}#{$bp-infix} {
+        flex-shrink: $i;
+      }
     }
   }
 }

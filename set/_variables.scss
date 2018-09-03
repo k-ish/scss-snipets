@@ -134,6 +134,11 @@ $display-list: (
 
 
 // flexbox 関連
+
+$order-end-value: 4;
+$grow-end-value: 4;
+$shrink-end-value: 4;
+
 // 親要素に指定
 
 // flex子要素の配置方向
@@ -181,13 +186,18 @@ $align-content: (
   center :center,   // 中央揃え
   space-between :space-between,   // 上下両端揃え
   space-around: space-around   // 上下均等割付
-)
+);
 //------------------------------------------------------------------//
 //「flex-wrap: nowrap;」の指定があるときは無効
 //------------------------------------------------------------------//
 
-// 子要素に指定（個別指定）
-// 親要素に「display:flex」の指定があると有効
+//
+$align-self: (
+  auto: auto,   // 初期値。親要素のalign-items の値を継承
+  stretch: stretch,   // 親要素または子要素最大の高さに合わせて拡張（スペースを埋める）
+  flex-start: flex-start,   // 上揃え
+  flex-end :flex-end,   // 下揃え
+  center :center,     // 中央揃え
+  baseline :baseline    // ベースラインに揃える
+)；
 
-// 親要素に空きスペースがある場合の
-// 他の子要素に対する、指定の子要素の伸び率

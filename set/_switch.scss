@@ -12,5 +12,15 @@ $create-display:                false;    // display
 $create-float:                  false;    // float
 $create-position:               false;    // position
 
-$create-space:                  false;    // spacer
 $create-grid-system:            false;    // grid system
+$create-space:                  false;    // spacer
+
+$create-flex-direction:         false;    // flex-direction
+$create-flex-wrap:              false;    // flex-wrap
+$create-align-items:            false;    // align-items
+$create-justify-content:        false;    // justify-content
+$create-align-content:          false;    // align-content
+$create-flex-order:             false;    // order
+$create-flex-grow:              false;    // flex-order
+$create-flex-shrink:            false;    // flex-shrink
+$align-self:                    false;    // align-self
