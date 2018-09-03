@@ -1,10 +1,6 @@
-@charset "utf-8";
+// media module
 
-// 
-// メディア
-// 
-
-// ベース
+// base
 @mixin media-block ($gutter:null) {
     @include clearfix;
     &_img {
@@ -16,11 +12,10 @@
     }
 }
 
-// 拡張
+// modifier
 // img右揃え
 @mixin media-img-right ($gutter:null) {
     float: right;
     margin-right: 0;
     margin-left: $gutter;
 }
-

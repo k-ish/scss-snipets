@@ -1,10 +1,5 @@
-@charset "utf-8";
-
-//
-// background
-//
-
 // background-color
+
 $create-bg-color: false !default;
 
 @if $create-bg-color {

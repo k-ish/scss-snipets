@@ -1,18 +1,21 @@
 @charset "utf-8";
 
-// breakpoint
-@import "set/breakpoint";
-
-// color
-@import "set/color";
-
-// variables
+// setting
 @import "set/variables";
-
-// normalize
+@import "set/functions";
+@import "set/breakpoint";
+@import "set/color";
+@import "mixin/clearfix";
 // @import "set/normalize";
 
-// utilitys
+// component
+@import "component/button";
+@import "component/card";
+@import "component/heading";
+@import "component/media";
+@import "component/list";
+
+// utility
 @import "utilitys/switch";
 @import "utilitys/clearfix";
 @import "utilitys/depth";
@@ -25,10 +28,3 @@
 @import "utilitys/display";
 @import "utilitys/flex";
 @import "utilitys/grid";
-
-//module
-@import "module/button";
-@import "module/card";
-@import "module/heading";
-@import "module/media";
-@import "module/list";

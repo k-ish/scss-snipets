@@ -1,15 +1,3 @@
-@charset "utf-8";
-
-// clearfix
-@mixin clearfix {
-  &::after {
-      display: block;
-      clear: both;
-      content: "";
-  }
-}
-
-
 // float
 
 $create-float: true !default;
