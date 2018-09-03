@@ -1,7 +1,5 @@
 // float
 
-$create-float: true !default;
-
 @if $create-float {
   @each $name, $float in $float-list {
     .float-#{$name} {

@@ -1,0 +1,47 @@
+// link-color
+
+@mixin link-color($color: blue, $change: lighten($clr, 20%)) {
+  color: $color;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $change;
+  }
+}
+
+
+
+// text-style
+
+@mixin text-style($clr: blue, $fz: 1.25em, $fw: bold) {
+  color: $clr;
+  font-size: $fz;
+  font-weight: $fw;
+}
+
+@mixin text-border($clr: #fff, $width: 2) {
+  text-shadow: 0 2px 0 $clr, 2px 0 0 $clr, 0 -2px 0 $clr, -2px 0 0 $clr,
+    -2px -2px 0 $clr, 2px -2px 0 $clr, -2px 2px 0 $clr, 2px 2px 0 $clr;
+}
+
+
+
+// 上付き文字
+
+@mixin sup {
+  font-size: 75.5%;
+  vertical-align: top;
+  position: relative;
+  top: -0.1em;
+}
+
+
+
+// 下付き文字
+
+@mixin sub {
+  font-size: 75.5%;
+  vertical-align: bottom;
+  position: relative;
+  top: 0.1em;
+}

@@ -1,24 +1,4 @@
-@charset "utf-8";
 
-//
-// スペース
-//
-
-// true  = 生成
-// $create-space: true;
-$create-space: false;
-
-// クラス名を指定
-$infix-margin: m;
-$infix-padding: p;
-$infix-top: t-;
-$infix-bottom: b-;
-$infix-right: r-;
-$infix-left: l-;
-$spacing-has-important: " !important";
-
-// 繰返し数
-$endValue: 10 !default;
 
 // クラス生成数の定義（余白値は5ずつ増える）
 @if $create-space {

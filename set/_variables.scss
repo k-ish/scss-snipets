@@ -59,7 +59,6 @@ $im: !important;
 
 
 // grid system
-$create-grid-system: false;
 $base-width: 1280px;
 $grid-gutter-width: 30px;
 $grid-columns: 12;
@@ -69,6 +68,20 @@ $container-width: (
   "lg": 960px,
   "xl": 1140px
 );
+
+
+
+// spacer
+$infix-margin: m;
+$infix-padding: p;
+$infix-top: t-;
+$infix-bottom: b-;
+$infix-right: r-;
+$infix-left: l-;
+$spacing-has-important: " !important";
+$endValue: 10 !default;
+
+
 
 // inline
 $font-weight: (

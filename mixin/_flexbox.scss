@@ -1,0 +1,10 @@
+// flex box
+
+
+// bese 
+
+@mixin flex-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

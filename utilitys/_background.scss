@@ -1,7 +1,5 @@
 // background-color
 
-$create-bg-color: false !default;
-
 @if $create-bg-color {
   @each $name, $color in $colors {
     .bg-#{$name} {
