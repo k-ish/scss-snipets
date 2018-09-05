@@ -7,7 +7,14 @@
 // @import "set/functions";
 @import "set/breakpoint";
 @import "set/switch";
-// @import "set/normalize";
+
+// normalize
+// @import "normalize/normalize";
+// @import "normalize/typography";
+// @import "normalize/image";
+// @import "normalize/table";
+// @import "normalize/form";
+
 
 // mixin
 @import "mixin/clearfix";
