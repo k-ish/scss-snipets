@@ -1,25 +1,35 @@
 // ベース
-@mixin btn-block {
+@mixin btn-block($size: .5em 1.5em) {
   display: inline-block;
-  padding: 1em 2em;
+  padding: $size;
   text-align: center;
-  a {
-    display: block;
-  }
 }
+
+// 色
+@mixin btn-color($bgc, $color:#ffffff) {
+  color: $color;
+  background-color: $bgc;
+}
+
+// ゴーストボタン
+@mixin btn-ghost($color, $boder-width, $radius:null ) {
+  color: $color;
+  border: $boder-width solid $color;
+  border-radius: $radius;
+}
+
 
 // サイズ拡張
 @mixin btn-mod-size {
   &-full {
-   width: 100%;
+    width: 100%;
   }
   &-small {
-   width: 100%;
+    width: 100%;
   }
   &-large {
-   width: 100%;
+    width: 100%;
   }
-
 }
 
 // ボタンリセット
