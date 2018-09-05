@@ -1,20 +1,26 @@
 // 汎用クラス生成スイッチ true で生成
 
+
+
+// context
 $create-text-color:             false;    // color
 $create-text-weight:            false;    // font-weight
 $create-text-align:             false;    // text-align
 $create-vertical-align:         false;    // vertical-align
 $create-text-appearance:        false;    // appearance
 
+// background
 $create-bg-color:               false;    // background-color
 
 $create-display:                false;    // display
 $create-float:                  false;    // float
 $create-position:               false;    // position
 
+// grid
 $create-grid-system:            false;    // grid system
 $create-space:                  false;    // spacer
 
+// flex box
 $create-flex-direction:         false;    // flex-direction
 $create-flex-wrap:              false;    // flex-wrap
 $create-align-items:            false;    // align-items
@@ -23,4 +29,4 @@ $create-align-content:          false;    // align-content
 $create-flex-order:             false;    // order
 $create-flex-grow:              false;    // flex-order
 $create-flex-shrink:            false;    // flex-shrink
-$align-self:                    false;    // align-self
+$create-align-self:             false;    // align-self
