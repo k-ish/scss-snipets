@@ -20,7 +20,7 @@ abbr[data-original-title] {
 }
 
 address {
-  margin-bottom: 1rem;
+  margin-bottom: $address-margin-bottom;
   font-style: normal;
   line-height: inherit;
 }
@@ -29,7 +29,7 @@ ol,
 ul,
 dl {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: $lists-margin-bottom;
 }
 
 ol ol,
@@ -44,12 +44,12 @@ dt {
 }
 
 dd {
-  margin-bottom: .5rem;
+  margin-bottom: $dd-margin-bottom;
   margin-left: 0;
 }
 
 blockquote {
-  margin: 0 0 1rem;
+  margin: 0 0 $blockquote-margin-bottom;
 }
 
 dfn {
