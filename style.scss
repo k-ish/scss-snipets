@@ -1,7 +1,59 @@
 @charset "utf-8";
 @import "import";
 
+// vertical rhythm
+// 課題：・for文で　・セクション間の余白調整
+// ---------------------------------------------------
 
+@mixin vertical-rhythm(
 
+  $base-font: 16px,         // ベースフォントサイズ
+  $base-line-height: 1.5,   // ベースの行間 24px
+  $jump-rate: 1             // base-font からのジャンプ率
 
+) {
 
+  $jump: $base-font * $jump-rate;             // ジャンプ率計算
+  $base-unit: $base-line-height * $base-font; // ベースのリズム 24px
+
+  // 要素間マージン
+  %base-margin-bottom {
+    letter-spacing: 1px;            
+    margin-bottom: $base-unit;
+  }
+
+  p {
+    font-size: $base-font;
+    line-height: $base-line-height;
+    @extend %base-margin-bottom;
+  }
+
+  h3 {
+    font-size: $base-font + $jump;
+    line-height: $base-line-height;
+    @extend %base-margin-bottom;
+  }
+
+  h2 {
+    padding-top: $base-unit;
+    font-size: $base-font + $jump * 2;
+    line-height: $base-line-height;
+    @extend %base-margin-bottom;
+
+  }
+  h1 {
+    font-size: $base-font + $jump * 3;
+    line-height: $base-line-height;
+    @extend %base-margin-bottom;
+  }
+}
+
+// * {
+//     box-sizing: border-box;
+//   margin: 0;
+// }
+// section {
+//   padding: 100px;
+// }
+
+// @include vertical-rhythm($jump-rate:0.5);
